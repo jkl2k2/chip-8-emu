@@ -14,7 +14,7 @@ SDL_Platform::SDL_Platform(int windowWidth, int windowHeight, int logicalWidth, 
 		fprintf(stderr, "SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
 	}
 
-	window = SDL_CreateWindow("SDL2 Window", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, windowWidth, windowHeight, SDL_WINDOW_SHOWN);
+	window = SDL_CreateWindow("CHIP-8-EMU", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, windowWidth, windowHeight, SDL_WINDOW_SHOWN);
 	if (!window) {
 		fprintf(stderr, "Window could not be created! SDL_Error: %s\n", SDL_GetError());
 	}
