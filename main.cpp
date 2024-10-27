@@ -1,14 +1,4 @@
-#include <iostream>
-#include <chrono>
-#include <thread>
-#include <cstdint>
-#include <SDL.h>
-
-#include "chip8.h"
-#include "sdl_platform.h"
-
-using std::uint32_t;
-using std::uint8_t;
+#include "main.h"
 
 const int width = 1024;
 const int height = 512;
@@ -36,12 +26,12 @@ uint8_t keymap[16] = {
 
 int main(int argc, char* argv[]) {
     if (argc < 2) {
-        std::cerr << "Usage: " << argv[0] << " <ROM file>" << std::endl;
+        std::cerr << "Usage: " << argv[0] << " <Path to ROM>" << std::endl;
         return 1;
     }
 
     Chip8 chip8 = Chip8();
-    SDL_Platform sdl = SDL_Platform(width, height, logicalWidth, logicalHeight);
+    GraphicsPlatform sdl = GraphicsPlatform(width, height, logicalWidth, logicalHeight);
 
     uint32_t pixels[2048] = {};
 

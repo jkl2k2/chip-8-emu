@@ -1,15 +1,6 @@
-#include <SDL.h>
-#include <cstdint>
-#include <iostream>
+#include "graphicsplatform.h"
 
-#include "sdl_platform.h"
-#include "chip8.h"
-
-using std::uint32_t;
-using std::uint8_t;
-
-
-SDL_Platform::SDL_Platform(int windowWidth, int windowHeight, int logicalWidth, int logicalHeight) {
+GraphicsPlatform::GraphicsPlatform(int windowWidth, int windowHeight, int logicalWidth, int logicalHeight) {
 	if (SDL_Init(SDL_INIT_VIDEO) != 0) {
 		fprintf(stderr, "SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
 	}
@@ -29,7 +20,7 @@ SDL_Platform::SDL_Platform(int windowWidth, int windowHeight, int logicalWidth, 
 		logicalWidth, logicalHeight);
 }
 
-SDL_Platform::~SDL_Platform() {
+GraphicsPlatform::~GraphicsPlatform() {
 	SDL_DestroyTexture(sdlTexture);
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
@@ -37,7 +28,7 @@ SDL_Platform::~SDL_Platform() {
 }
 
 
-void SDL_Platform::updateTexture(uint32_t* buffer) {
+void GraphicsPlatform::updateTexture(uint32_t* buffer) {
 	// Update SDL texture
 	SDL_UpdateTexture(sdlTexture, NULL, buffer, 64 * sizeof(Uint32));
 	// Clear screen and render
@@ -46,7 +37,7 @@ void SDL_Platform::updateTexture(uint32_t* buffer) {
 	SDL_RenderPresent(renderer);
 }
 
-void SDL_Platform::input(Chip8& chip8, uint8_t* keymap) {
+void GraphicsPlatform::input(Chip8& chip8, uint8_t* keymap) {
 	SDL_Event e;
 	while (SDL_PollEvent(&e)) {
 		if (e.type == SDL_QUIT) exit(0);

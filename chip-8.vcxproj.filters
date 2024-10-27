@@ -21,7 +21,7 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="sdl_platform.cpp">
+    <ClCompile Include="graphicsplatform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,10 @@
     <ClInclude Include="chip8.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="sdl_platform.h">
+    <ClInclude Include="graphicsplatform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

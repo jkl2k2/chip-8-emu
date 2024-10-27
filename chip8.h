@@ -1,9 +1,14 @@
 #pragma once
 
+#include <iostream>
 #include <cstdint>
+#include <filesystem>
+#include <random>
+#include <time.h>
 
 using std::uint16_t;
 using std::uint8_t;
+using std::uintmax_t;
 
 class Chip8 {
 private:

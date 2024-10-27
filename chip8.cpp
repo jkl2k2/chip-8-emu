@@ -1,14 +1,4 @@
-#include <iostream>
-#include <filesystem>
-#include <cstdint>
-#include <random>
-#include <time.h>
-
 #include "chip8.h"
-
-using std::uint16_t;
-using std::uint8_t;
-using std::uintmax_t;
 
 unsigned char font[] = {
     0xF0, 0x90, 0x90, 0x90, 0xF0, // 0

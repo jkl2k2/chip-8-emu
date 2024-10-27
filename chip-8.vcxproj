@@ -21,11 +21,12 @@
   <ItemGroup>
     <ClCompile Include="chip8.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="sdl_platform.cpp" />
+    <ClCompile Include="graphicsplatform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chip8.h" />
-    <ClInclude Include="sdl_platform.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="graphicsplatform.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
