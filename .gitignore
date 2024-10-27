@@ -1,0 +1,6 @@
+.vs/
+chip-8/
+x64/
+*.sln
+roms/
+*.vcxproj.user
